@@ -1,5 +1,5 @@
 {
-  "name": "learnstorybook-design-system-template",
+  "name": "design-system-template-st-rr-01",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -38,6 +38,16 @@
       }
     ]
   },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -51,6 +61,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.16",
     "@storybook/addon-a11y": "^6.2.8",
     "@storybook/addon-actions": "^6.2.8",
     "@storybook/addon-essentials": "^6.2.8",
@@ -58,7 +69,14 @@
     "@storybook/node-logger": "^6.2.8",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.8",
+    "auto": "^10.25.1",
     "chromatic": "^5.6.2",
+    "cross-env": "^7.0.3",
     "prettier": "^2.2.1"
-  }
+  },
+  "description": "storybook design systems tutorial",
+  "main": "dist/index.js",
+  "repository": "https://github.com/rabrad/learnstorybook-design-system.git",
+  "author": "rabeerd",
+  "license": "MIT"
 }
